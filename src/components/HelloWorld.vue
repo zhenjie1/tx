@@ -33,6 +33,8 @@
 </template>
 
 <script>
+const aaa = '123321'
+
 export default {
   name: 'HelloWorld',
   props: {

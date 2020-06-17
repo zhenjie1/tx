@@ -5,13 +5,22 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    '@vue/standard'
+    '@vue/standard',
+    'plugin:jsdoc/recommended'
+  ],
+  plugins: [
+    'jsdoc'
   ],
   parserOptions: {
     parser: 'babel-eslint'
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-console': ['error', { allow: ['info', 'warn', 'error', 'group', 'groupEnd', 'clear'] }],
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'valid-jsdoc': 2,
+    'no-return-assign': 'off',
+    camelcase: 'off',
+    'no-return-await': 'off',
+    'prefer-promise-reject-errors': 'off'
   }
 }
