@@ -1,0 +1,18 @@
+$mainColor: #409EFF;
+$borderColor: rgba(0,0,0, .04);
+$bgHover: rgba(0,0,0, .02);
+$bgColor: white;
+
+
+@mixin lineOmit($line) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}
+
+@mixin omit() {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

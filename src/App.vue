@@ -1,32 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <el-container class='pageContainer'>
+        <!-- 页面左侧 -->
+      <el-aside width="200px">
+        <!-- 页面左侧的菜单 -->
+        <PageLeftMenu></PageLeftMenu>
+      </el-aside>
+      <el-container>
+        <el-header class="myPageHeader"><PageHeader/></el-header>
+        <el-main class="mainTemplate">
+          <router-view/>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import PageLeftMenu from '@/components/common/pageLeftMenu'
+import PageHeader from '@/components/common/pageHeader'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    PageLeftMenu,
+    PageHeader
   }
+}
+</script>
+
+<style lang="scss" scope>
+.pageContainer{height: 100%;
+  .myPageHeader{border-bottom: 1px solid #e6e6e6;}
+  .mainTemplate{padding: 0;}
 }
 </style>
